@@ -1,3 +1,5 @@
+import com.sun.org.apache.xalan.internal.xsltc.cmdline.Compile
+
 description = "Spring Beans"
 
 apply plugin: "groovy"
@@ -5,6 +7,7 @@ apply plugin: "groovy"
 dependencies {
 	compile(project(":spring-core"))
 	optional("javax.inject:javax.inject:1")
+	compile("org.projectlombok:lombok:1.18.4")
 	optional("org.yaml:snakeyaml:1.24")
 	optional("org.codehaus.groovy:groovy-xml:${groovyVersion}")
 	optional("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
@@ -29,3 +32,5 @@ def deps = compileGroovy.taskDependencies.immutableValues + compileGroovy.taskDe
 compileGroovy.dependsOn = deps - "compileJava"
 compileKotlin.dependsOn(compileGroovy)
 compileKotlin.classpath += files(compileGroovy.destinationDir)
+
+

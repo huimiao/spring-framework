@@ -17,6 +17,15 @@
 package org.springframework.core.env;
 
 /**
+ * EnvironmentCapable接口是一个包含和暴露Enviroment引用的组件。
+ *
+ * 所有的spring的application context都继承了EnvironmentCapable接口，
+ * 这个接口的主要用来在框架中使用instanceof方法检测，
+ * 为了和enviroment进行交互，instanceof方法用来检查beanFactory实例是否是applicationContext实例。
+ * 像说明提到到，applicationContext继承了EnvironmentCapable接口，
+ * 因此暴露了一个getEnviroment()方法，ConfigurableApplicationContext重写了getEnviroment方法，
+ * 返回了一个ConfigurableEnviroment。
+ *
  * Interface indicating a component that contains and exposes an {@link Environment} reference.
  *
  * <p>All Spring application contexts are EnvironmentCapable, and the interface is used primarily

@@ -1,0 +1,5 @@
+@startuml
+XMLBeanFactory -> AbstractBeanFactory: getBean(beanName)
+
+XMLBeanFactory <- AbstractBeanFactory: getBean(beanName)
+@enduml

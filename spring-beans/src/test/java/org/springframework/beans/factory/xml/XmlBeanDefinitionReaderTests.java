@@ -99,7 +99,7 @@ public class XmlBeanDefinitionReaderTests {
 	@Test
 	public void withFreshInputStream() {
 		SimpleBeanDefinitionRegistry registry = new SimpleBeanDefinitionRegistry();
-		Resource resource = new ClassPathResource("test.xml", getClass());
+		Resource resource = new ClassPathResource("huimiaotest.xml", getClass());
 		new XmlBeanDefinitionReader(registry).loadBeanDefinitions(resource);
 		testBeanDefinitions(registry);
 	}
